@@ -22,5 +22,15 @@ public class GetProductList_RestAssuredTest {
                 .then()
                 .statusCode(404);
     }
+    
 
+     @Test
+    public void shouldNotGetProductListd() {
+        RestAssured.baseURI = "https://api.escuelajs.co";
+        RestAssured.given()
+                .when()
+                .put("/api/v1/products")
+                .then()
+                .statusCode(404);
+    }
 }
